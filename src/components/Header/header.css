@@ -1,0 +1,123 @@
+
+.header{
+    width: 100%;
+    height: 85px;
+    background-color: #6b6b70;
+    position: fixed;
+    
+
+}
+
+.headerIcons{
+    display: flex;
+    justify-content: space-between;
+    padding: 1% 0 0 10%;
+    width: 80%;
+   
+}
+
+.icons{ 
+    margin-left:95% ;
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
+    margin-top: 1%;
+}
+ .icons img{
+     height: 4vh;
+     margin-right: 2%;
+ }
+.burger-menu{
+    margin-left: -10%;
+}
+.menushoot{
+    margin-top: 5%;
+}
+.burger-menu input{
+    opacity: 0;
+}
+.burger-menu label{
+    opacity: 3;
+}
+.menu_btn{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 16;
+    transition: 0.1s;
+}
+.menu_btn > span,
+.menu_btn > span::before,
+.menu_btn > span::after{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transition: 1s;
+}
+.menu_btn>span::before{
+    top: -8px;
+    content: '';
+    transition: 1s;
+}
+.menu_btn >span::after{
+    top: 8px;
+    content: '';
+}
+.menu_box{
+    display: block;
+    position: fixed;
+    top: 0;
+    left:-100%;
+    visibility: hidden;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #45464c;
+    box-shadow: 5px 0px 5px rgb(0, 0, 0);
+    transition: 1s;
+    z-index: 15;
+    border-radius: 50px;
+}
+.menu li{
+    color: white;
+    margin-top: 15%;
+    font-size: 20px;
+}
+.menu h2{
+    font-size: 25px;
+    color: white;
+    margin-bottom: 50%;
+    padding-left: 5%;
+}
+.menu li{
+    color: white;
+    margin-top: 15%;
+}
+.burger-menu input:checked ~ .menu_btn >span{
+    transform: rotate(45deg);
+}
+.burger-menu input:checked ~ .menu_btn >span::before{
+   top:0; 
+   transform: rotate(0);
+   transition: 1s;
+}
+.burger-menu input:checked ~ .menu_btn >span::after{
+    top:0;
+    transform: rotate(90deg);
+    transition: 1s;
+}
+.burger-menu input:checked ~ .menu_box{
+    visibility: visible;
+    left: 0;
+}
